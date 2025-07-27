@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Data 
@@ -48,9 +49,9 @@ public class Usuario {
     @Column
     private String municipio;
 
-
+    @ManyToOne
     @Column(name="codigo_postal")
-    private String codigoPostal;
+    private CodigoPostal codigoPostal;
 
 
     @Column(name="fecha_creacion", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
